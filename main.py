@@ -4,6 +4,12 @@ import pandas as pd
 import numpy as np
 import pylab as pylab
 
+
+import statsmodels.api as sm
+import matplotlib.pyplot as plt
+from patsy import dmatrices
+
+
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 #from sklearn import datasets
@@ -17,8 +23,8 @@ from sklearn.ensemble import RandomForestClassifier
 #from sklearn import metrics
 #from sklearn.linear_model import LogisticRegression
 
-import numpy as np
-import matplotlib.pyplot as plt
+
+
 
 # an example graph type
 def drawfig1(ylabels, xvalues, title=''):
@@ -234,8 +240,7 @@ def logisticregressionmodel1():
         return
 '''
 
-def logisticregressionmodel(traindata,  validationdata):
-    X = np.asarray(traindata)
+'''
     data = X[:,5]
     X = data.reshape(len(traindata), 1)
     print "this is X:"
@@ -243,128 +248,9 @@ def logisticregressionmodel(traindata,  validationdata):
     y = []
     for i in range(0, len(traindata)):
 	y.extend([traindata['Survived'].iloc[i]])
-    model = linear_model.LogisticRegression()
-    model.fit(X, y)
-    print "Fitted Logistic regression model:"
-    print(model)
-    # make predictions
-    expected = validationdata['Survived']
-    X = np.asarray(validationdata)
-    data = X[:,5]
-    X = data.reshape(len(validationdata), 1)
-    predicted = model.predict(X)
-    print "predicted output:"
-    print predicted
-    model_diagnostics1(expected,predicted)
-    return 
-	
-    
-def logisticregressionmodel2(traindata,  validationdata):
-    # Logistic Regression
-    
-    #def data(filename):
-    #X = pd.read_table(filename, sep=',', warn_bad_lines=True, error_bad_lines=True, low_memory = False)
-    #X = pd.read_csv('train.csv', header=0)
-    #X = np.asarray(traindata)
-    data = X[:,4]
-    X = data.reshape(len(traindata), 1)	
-    #labels = X[:,1]
-    print "this is X:"
-    print X
-    y = []
-    for i in range(0, len(traindata)):
-	y.extend([traindata['Survived'].iloc[i]])
-    '''
-    print "X"
-    print X
-    print "data"
-    print data
-    print "labels:"
-    print np.unique(labels)
-    #return data, labels
-    '''	
-    
-   
-    # fit a logistic regression model to the data
-    model = linear_model.LogisticRegression()
-    '''
-  
 
-    #The shape of X must be (n_samples, n_features) as explained in the SVC.fit docstring.
-    #A 1-d array is interpreted as a single sample (for convenience when doing predictions on single samples).
-    #Reshape your X to (n_samples, 1)
-    train = traindata['Age'].values
-    train = np.array(train)[:, np.newaxis]
-    train = train.reshape(len(traindata), 1)	
-    
-    #X = np.array(traindata['Age']).reshape(len(traindata), 1)	
-    #for i in range(1, len(traindata)):
-    #X.extend([i, traindata['Age'].iloc[i]])
-   
-    print train
-    print "Xshape = ", (train.shape)
-     '''
-    model.fit(X, y)
-    print "Fitted Logistic regression model:"
-    print(model)
-    # make predictions
-    expected = validationdata['Survived']
-    predicted = model.predict(validationdata)
-    # summarize the fit of the model
-    #print(metrics.classification_report(expected, predicted))
-    #print(metrics.confusion_matrix(expected, predicted))
-    return 
+'''
 
-
-
-def svmmodel(traindata,  validationdata):
-    X = np.asarray(traindata)
-    data = X[:,5]
-    X = data.reshape(len(traindata), 1)
-    print "this is X:"
-    print X
-    y = []
-    for i in range(0, len(traindata)):
-	y.extend([traindata['Survived'].iloc[i]])
-    model = svm.SVC()
-    model.fit(X, y)
-    print "Fitted SVM  model:"
-    print(model)
-    # make predictions
-    expected = validationdata['Survived']
-    X = np.asarray(validationdata)
-    data = X[:,5]
-    X = data.reshape(len(validationdata), 1)
-    predicted = model.predict(X)
-    print "predicted output:"
-    print predicted
-    model_diagnostics1(expected,predicted)
-    return
-    
-
-def randomforestmodel(traindata,  validationdata):
-    X = np.asarray(traindata)
-    data = X[:,5]
-    X = data.reshape(len(traindata), 1)
-    print "this is X:"
-    print X
-    y = []
-    for i in range(0, len(traindata)):
-	y.extend([traindata['Survived'].iloc[i]])
-    forestmodel = RandomForestClassifier(n_estimators = 1000)
-    forestmodel.fit(X, y)
-    print "Fitted random forest  model:"
-    print(forestmodel)
-    # make predictions
-    expected = validationdata['Survived']
-    X = np.asarray(validationdata)
-    data = X[:,5]
-    X = data.reshape(len(validationdata), 1)
-    predicted = forestmodel.predict(X)
-    print "predicted output:"
-    print predicted
-    model_diagnostics1(expected,predicted)
-    return    
 
 
 def printmodeldiagnostics():
