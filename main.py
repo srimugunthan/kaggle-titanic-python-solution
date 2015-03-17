@@ -23,6 +23,7 @@ from sklearn.ensemble import RandomForestClassifier
 #from sklearn import metrics
 #from sklearn.linear_model import LogisticRegression
 
+import models
 
 
 
@@ -201,18 +202,7 @@ def formtestandvalidationset(traindf):
 	return 	(traindata, validationdata)
 
 
-def model_diagnostics1(x_validation, y_prediction):
-        C = confusion_matrix(x_validation,y_prediction)
-        print C
-        target_names = ["Survived", "Dead"]
-        print classification_report(x_validation, y_prediction, target_names=target_names)
-	#print accuracy_score(x_validation, y_prediction)
-        plt.matshow(C)
-        plt.title('Confusion matrix')
-        plt.colorbar()
-        plt.show()
-	return 
-    
+
 
 def naivepredictionmodel(traindata,validationdata):
 	print "everyone dies"
@@ -359,7 +349,7 @@ def main():
 
 	#logisticregressionmodel(traindata, validdata)
 	#svmmodel(traindata, validdata)
-	randomforestmodel(traindata, validdata)
+	models.randomforestmodel(traindata, validdata)
 	decisiontreemodel()
 	featureengineer()
 	decisiontreemodel()

@@ -1,3 +1,37 @@
+#!/usr/bin/python
+import pandas as pd
+import numpy as np
+import pylab as pylab
+
+
+import statsmodels.api as sm
+import matplotlib.pyplot as plt
+from patsy import dmatrices
+
+
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+#from sklearn import datasets
+from sklearn import metrics
+from sklearn import linear_model
+from sklearn.linear_model import LogisticRegression
+from sklearn import svm
+from sklearn.ensemble import RandomForestClassifier
+
+def model_diagnostics1(x_validation, y_prediction):
+        C = confusion_matrix(x_validation,y_prediction)
+        print C
+        target_names = ["Survived", "Dead"]
+        print classification_report(x_validation, y_prediction, target_names=target_names)
+	#print accuracy_score(x_validation, y_prediction)
+        plt.matshow(C)
+        plt.title('Confusion matrix')
+        plt.colorbar()
+        plt.show()
+	return 
+    
+    
+
 def logisticregressionmodel(traindata,  validationdata):
     X = np.asarray(traindata)
 
