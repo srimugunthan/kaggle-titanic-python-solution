@@ -24,6 +24,7 @@ from sklearn.ensemble import RandomForestClassifier
 #from sklearn.linear_model import LogisticRegression
 
 import models
+import fengg
 
 
 
@@ -204,52 +205,10 @@ def formtestandvalidationset(traindf):
 
 
 
-def naivepredictionmodel(traindata,validationdata):
-	print "everyone dies"
-	x = 0
-	columns = ['Survived']
-	y = np.repeat(x, len(validationdata) , axis=0)
-	indexnum = np.arange(0,len(validationdata),1)
-	predictiondata = pd.DataFrame(columns=columns, index = indexnum)
-	predictiondata['Survived'] = y
-	#model_diagnostics1(validationdata['Survived'],predictiondata['Survived'])
-	
-	return 
-
-def decisiontreemodel():
-	print "decision tree model"
-	return 
-'''
-import sklearn svm, linear_model
-
-def logisticregressionmodel1():
-        classifier = linear_model.LogisticRegression()
-        # fit the model and make predictions:
-	classifier.fit(data, targets)
-	predict = classifier.predict(test_data)
-        return
-'''
-
-'''
-    data = X[:,5]
-    X = data.reshape(len(traindata), 1)
-    print "this is X:"
-    print X
-    y = []
-    for i in range(0, len(traindata)):
-	y.extend([traindata['Survived'].iloc[i]])
-
-'''
 
 
 
-def printmodeldiagnostics():
-	print "model Diagnostics"
-	return
 
-def featureengineer():
-	print "construct new variables"	
-	return
 
 def findmissingval(traindf):
 	col_ids = list(traindf.columns.values)
@@ -339,20 +298,29 @@ def main():
 
 	titanicdataexplore(traindf)
 	fixagevar(traindf)
-	(traindata, validdata) = formtestandvalidationset(traindf)
+	(traindata, validationdata) = formtestandvalidationset(traindf)
 	
 	print "traindata len = ",len(traindata)
-	print  "validation data len = ", len(validdata)
+	print  "validation data len = ", len(validationdata)
 	
-	naivepredictionmodel(traindata, validdata)
+	#naivepredictionmodel(traindata, validdata)
 	
 
 	#logisticregressionmodel(traindata, validdata)
 	#svmmodel(traindata, validdata)
-	models.randomforestmodel(traindata, validdata)
-	decisiontreemodel()
-	featureengineer()
-	decisiontreemodel()
+	#models.randomforestmodel(traindata, validdata)
+	
+	#Python is neither "call-by-reference" nor "call-by-value".
+	#In Python a variable is not an alias for a location in memory.
+	#Rather, it is simply a binding to a Python object.
+	
+	(traindata, validationdata) = fengg.engg_new_features(traindata, validationdata)
+	print "traindata len = ",len(traindata)
+	print  "validation data len = ", len(validationdata)
+	
+	models.decisiontreemodel(traindata, validationdata)
+	
+	
 	print "final model"
 	print "write output"
 	return
