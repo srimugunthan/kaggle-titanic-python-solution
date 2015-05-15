@@ -1,0 +1,93 @@
+   PassengerId  Pclass                                          Name     Sex  \
+0          892       3                              Kelly, Mr. James    male   
+1          893       3              Wilkes, Mrs. James (Ellen Needs)  female   
+2          894       2                     Myles, Mr. Thomas Francis    male   
+3          895       3                              Wirz, Mr. Albert    male   
+4          896       3  Hirvonen, Mrs. Alexander (Helga E Lindqvist)  female   
+
+    Age  SibSp  Parch   Ticket     Fare Cabin Embarked  
+0  34.5      0      0   330911   7.8292   NaN        Q  
+1  47.0      1      0   363272   7.0000   NaN        S  
+2  62.0      0      0   240276   9.6875   NaN        Q  
+3  27.0      0      0   315154   8.6625   NaN        S  
+4  22.0      1      1  3101298  12.2875   NaN        S  
+=======================================
+test data frame
+=======================================
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 418 entries, 0 to 417
+Data columns (total 11 columns):
+PassengerId    418  non-null values
+Pclass         418  non-null values
+Name           418  non-null values
+Sex            418  non-null values
+Age            332  non-null values
+SibSp          418  non-null values
+Parch          418  non-null values
+Ticket         418  non-null values
+Fare           417  non-null values
+Cabin          91  non-null values
+Embarked       418  non-null values
+dtypes: float64(2), int64(4), object(5)
+=======================================
+typeof test data frame
+=======================================
+<class 'pandas.core.frame.DataFrame'>
+=======================================
+datatypes test data frame
+=======================================
+PassengerId      int64
+Pclass           int64
+Name            object
+Sex             object
+Age            float64
+SibSp            int64
+Parch            int64
+Ticket          object
+Fare           float64
+Cabin           object
+Embarked        object
+dtype: object
+=======================================
+Info test data frame
+=======================================
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 418 entries, 0 to 417
+Data columns (total 11 columns):
+PassengerId    418  non-null values
+Pclass         418  non-null values
+Name           418  non-null values
+Sex            418  non-null values
+Age            332  non-null values
+SibSp          418  non-null values
+Parch          418  non-null values
+Ticket         418  non-null values
+Fare           417  non-null values
+Cabin          91  non-null values
+Embarked       418  non-null values
+dtypes: float64(2), int64(4), object(5)None
+=======================================
+description Info test data frame
+=======================================
+       PassengerId      Pclass         Age       SibSp       Parch        Fare
+count   418.000000  418.000000  332.000000  418.000000  418.000000  417.000000
+mean   1100.500000    2.265550   30.272590    0.447368    0.392344   35.627188
+std     120.810458    0.841838   14.181209    0.896760    0.981429   55.907576
+min     892.000000    1.000000    0.170000    0.000000    0.000000    0.000000
+25%     996.250000    1.000000   21.000000    0.000000    0.000000    7.895800
+50%    1100.500000    3.000000   27.000000    0.000000    0.000000   14.454200
+75%    1204.750000    3.000000   39.000000    1.000000    0.000000   31.500000
+max    1309.000000    3.000000   76.000000    8.000000    9.000000  512.329200
+PassengerId : NULL or empty or NA  count =  0 / 418
+Pclass : NULL or empty or NA  count =  0 / 418
+Name : NULL or empty or NA  count =  0 / 418
+Sex : NULL or empty or NA  count =  0 / 418
+Age : NA count =  86 / 418
+Age : NULL or empty or NA  count =  86 / 418
+SibSp : NULL or empty or NA  count =  0 / 418
+Parch : NULL or empty or NA  count =  0 / 418
+Ticket : NULL or empty or NA  count =  0 / 418
+Fare : NA count =  1 / 418
+Fare : NULL or empty or NA  count =  1 / 418
+Cabin : NULL or empty or NA  count =  327 / 418
+Embarked : NULL or empty or NA  count =  0 / 418

@@ -1,0 +1,114 @@
+   PassengerId  Survived  Pclass  \
+0            1         0       3   
+1            2         1       1   
+2            3         1       3   
+3            4         1       1   
+4            5         0       3   
+
+                                                Name     Sex  Age  SibSp  \
+0                            Braund, Mr. Owen Harris    male   22      1   
+1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female   38      1   
+2                             Heikkinen, Miss. Laina  female   26      0   
+3       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female   35      1   
+4                           Allen, Mr. William Henry    male   35      0   
+
+   Parch            Ticket     Fare Cabin Embarked  
+0      0         A/5 21171   7.2500   NaN        S  
+1      0          PC 17599  71.2833   C85        C  
+2      0  STON/O2. 3101282   7.9250   NaN        S  
+3      0            113803  53.1000  C123        S  
+4      0            373450   8.0500   NaN        S  
+=======================================
+train data frame
+=======================================
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 891 entries, 0 to 890
+Data columns (total 12 columns):
+PassengerId    891  non-null values
+Survived       891  non-null values
+Pclass         891  non-null values
+Name           891  non-null values
+Sex            891  non-null values
+Age            714  non-null values
+SibSp          891  non-null values
+Parch          891  non-null values
+Ticket         891  non-null values
+Fare           891  non-null values
+Cabin          204  non-null values
+Embarked       889  non-null values
+dtypes: float64(2), int64(5), object(5)
+=======================================
+typeof train data frame
+=======================================
+<class 'pandas.core.frame.DataFrame'>
+=======================================
+datatypes train data frame
+=======================================
+PassengerId      int64
+Survived         int64
+Pclass           int64
+Name            object
+Sex             object
+Age            float64
+SibSp            int64
+Parch            int64
+Ticket          object
+Fare           float64
+Cabin           object
+Embarked        object
+dtype: object
+=======================================
+Info train data frame
+=======================================
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 891 entries, 0 to 890
+Data columns (total 12 columns):
+PassengerId    891  non-null values
+Survived       891  non-null values
+Pclass         891  non-null values
+Name           891  non-null values
+Sex            891  non-null values
+Age            714  non-null values
+SibSp          891  non-null values
+Parch          891  non-null values
+Ticket         891  non-null values
+Fare           891  non-null values
+Cabin          204  non-null values
+Embarked       889  non-null values
+dtypes: float64(2), int64(5), object(5)None
+=======================================
+description Info train data frame
+=======================================
+       PassengerId    Survived      Pclass         Age       SibSp  \
+count   891.000000  891.000000  891.000000  714.000000  891.000000   
+mean    446.000000    0.383838    2.308642   29.699118    0.523008   
+std     257.353842    0.486592    0.836071   14.526497    1.102743   
+min       1.000000    0.000000    1.000000    0.420000    0.000000   
+25%     223.500000    0.000000    2.000000   20.125000    0.000000   
+50%     446.000000    0.000000    3.000000   28.000000    0.000000   
+75%     668.500000    1.000000    3.000000   38.000000    1.000000   
+max     891.000000    1.000000    3.000000   80.000000    8.000000   
+
+            Parch        Fare  
+count  891.000000  891.000000  
+mean     0.381594   32.204208  
+std      0.806057   49.693429  
+min      0.000000    0.000000  
+25%      0.000000    7.910400  
+50%      0.000000   14.454200  
+75%      0.000000   31.000000  
+max      6.000000  512.329200  
+PassengerId : NULL or empty or NA  count =  0 / 891
+Survived : NULL or empty or NA  count =  0 / 891
+Pclass : NULL or empty or NA  count =  0 / 891
+Name : NULL or empty or NA  count =  0 / 891
+Sex : NULL or empty or NA  count =  0 / 891
+Age : NA count =  177 / 891
+Age : NULL or empty or NA  count =  177 / 891
+SibSp : NULL or empty or NA  count =  0 / 891
+Parch : NULL or empty or NA  count =  0 / 891
+Ticket : NULL or empty or NA  count =  0 / 891
+Fare : NA count =  0 / 891
+Fare : NULL or empty or NA  count =  0 / 891
+Cabin : NULL or empty or NA  count =  687 / 891
+Embarked : NULL or empty or NA  count =  2 / 891

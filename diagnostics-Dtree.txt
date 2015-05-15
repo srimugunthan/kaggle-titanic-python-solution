@@ -1,0 +1,9 @@
+[[84 16]
+ [19 42]]
+             precision    recall  f1-score   support
+
+   Survived       0.82      0.84      0.83       100
+       Dead       0.72      0.69      0.71        61
+
+avg / total       0.78      0.78      0.78       161
+
